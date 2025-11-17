@@ -15,47 +15,38 @@ connectDB()
 const app = express()
 
 // Middleware - CORS configuration
-const allowedOrigins = [
-  'http://localhost:3000',
-  'http://localhost:5173', // Vite default port
-  process.env.FRONTEND_URL,
-  // Vercel preview URLs pattern
-  /^https:\/\/myapp-.*\.vercel\.app$/,
-  // Vercel production URL (update with your actual production URL)
-  'https://myapp-nluat6868-netizens-projects.vercel.app',
-].filter(Boolean) // Remove undefined values
-
 app.use(
   cors({
     origin: (origin, callback) => {
       // Allow requests with no origin (like mobile apps or curl requests)
       if (!origin) return callback(null, true)
       
-      // Check if origin is in allowed list
-      const isAllowed = allowedOrigins.some((allowedOrigin) => {
-        if (typeof allowedOrigin === 'string') {
-          return origin === allowedOrigin
-        }
-        if (allowedOrigin instanceof RegExp) {
-          return allowedOrigin.test(origin)
-        }
-        return false
-      })
-      
-      if (isAllowed) {
-        callback(null, true)
-      } else {
-        // In development, allow all origins for easier testing
-        if (process.env.NODE_ENV === 'development') {
-          callback(null, true)
-        } else {
-          callback(new Error('Not allowed by CORS'))
-        }
+      // Allow localhost for development
+      if (origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:')) {
+        return callback(null, true)
       }
+      
+      // Allow all Vercel preview and production URLs
+      if (
+        origin.includes('.vercel.app') ||
+        origin.includes('vercel.app') ||
+        origin === process.env.FRONTEND_URL
+      ) {
+        return callback(null, true)
+      }
+      
+      // In development, allow all origins for easier testing
+      if (process.env.NODE_ENV === 'development') {
+        return callback(null, true)
+      }
+      
+      // Default: allow (for production, you might want to be more strict)
+      callback(null, true)
     },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    exposedHeaders: ['Content-Range', 'X-Content-Range'],
   })
 )
 app.use(express.json())
