@@ -71,6 +71,11 @@ import { logActivity, getClientIp, getUserAgent } from '../utils/activityLogger.
  *         description: Server error
  */
 export const getProducts = asyncHandler(async (req, res) => {
+  if (!req.user || !req.user._id) {
+    res.status(401)
+    throw new Error('Not authorized')
+  }
+  
   const { page = 1, limit = 8 } = req.query
   const skip = (page - 1) * limit
   const products = await Product.find({ user: req.user._id }).skip(skip).limit(parseInt(limit)).sort({ createdAt: -1 })

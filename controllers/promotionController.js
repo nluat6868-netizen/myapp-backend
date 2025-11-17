@@ -63,6 +63,11 @@ import { logActivity, getClientIp, getUserAgent } from '../utils/activityLogger.
  *                 $ref: '#/components/schemas/Promotion'
  */
 export const getPromotions = asyncHandler(async (req, res) => {
+  if (!req.user || !req.user._id) {
+    res.status(401)
+    throw new Error('Not authorized')
+  }
+  
   const promotions = await Promotion.find({ user: req.user._id }).sort({ order: 1, createdAt: -1 })
   res.json(promotions)
 })
