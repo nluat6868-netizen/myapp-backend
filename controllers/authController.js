@@ -133,7 +133,7 @@ export const register = async (req, res) => {
       name,
       email,
       password,
-      role: role || 'admin', // Default to admin for new users
+      role: role || 'admin', // Default to admin for new users (model default is also admin)
       permissions: permissions || [],
     })
 
