@@ -22,6 +22,14 @@ const userSchema = mongoose.Schema(
       type: String,
       default: null,
     },
+    phone: {
+      type: String,
+      default: '',
+    },
+    address: {
+      type: String,
+      default: '',
+    },
     role: {
       type: String,
       enum: ['superAdmin', 'admin', 'user'],

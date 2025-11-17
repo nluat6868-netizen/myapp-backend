@@ -13,7 +13,7 @@ const productAttributeSchema = mongoose.Schema(
     },
     type: {
       type: String,
-      enum: ['text', 'number', 'file', 'textarea', 'select', 'email', 'image', 'gallery'],
+      enum: ['text', 'number', 'file', 'textarea', 'select', 'email', 'image', 'gallery', 'image-gallery'],
       required: true,
     },
     options: {

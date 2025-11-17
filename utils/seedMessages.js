@@ -88,6 +88,64 @@ const seedMessages = async () => {
             { text: 'Shop có dịch vụ ship nhanh trong 24h với phí phụ thu. Bạn có muốn dùng dịch vụ này không?', sender: 'user', hoursAgo: 13 },
           ],
         },
+        {
+          customerName: 'Võ Thị F',
+          lastMessage: 'Sản phẩm có giảm giá không?',
+          pinned: false,
+          unread: 1,
+          online: true,
+          messages: [
+            { text: 'Sản phẩm có giảm giá không?', sender: 'customer', hoursAgo: 1 },
+            { text: 'Hiện tại shop đang có chương trình giảm 20% cho đơn hàng trên 500k. Bạn có muốn xem thêm không?', sender: 'user', hoursAgo: 0 },
+          ],
+        },
+        {
+          customerName: 'Đỗ Văn G',
+          lastMessage: 'Em muốn hỏi về bảo hành',
+          pinned: false,
+          unread: 0,
+          online: false,
+          messages: [
+            { text: 'Em muốn hỏi về bảo hành', sender: 'customer', hoursAgo: 6 },
+            { text: 'Sản phẩm có bảo hành bao lâu ạ?', sender: 'customer', hoursAgo: 6 },
+            { text: 'Sản phẩm có bảo hành 12 tháng. Trong thời gian bảo hành, shop sẽ hỗ trợ đổi mới nếu có lỗi.', sender: 'user', hoursAgo: 5 },
+          ],
+        },
+        {
+          customerName: 'Bùi Thị H',
+          lastMessage: 'Shop có cửa hàng ở đâu?',
+          pinned: false,
+          unread: 2,
+          online: true,
+          messages: [
+            { text: 'Shop có cửa hàng ở đâu?', sender: 'customer', hoursAgo: 3 },
+            { text: 'Em muốn đến xem trực tiếp', sender: 'customer', hoursAgo: 3 },
+            { text: 'Shop có cửa hàng tại 123 Đường ABC, Quận XYZ, TP.HCM. Giờ mở cửa từ 8h-22h hàng ngày.', sender: 'user', hoursAgo: 2 },
+          ],
+        },
+        {
+          customerName: 'Lý Văn I',
+          lastMessage: 'Cảm ơn shop, em đã nhận được hàng',
+          pinned: false,
+          unread: 0,
+          online: false,
+          messages: [
+            { text: 'Cảm ơn shop, em đã nhận được hàng', sender: 'customer', hoursAgo: 20 },
+            { text: 'Hàng đẹp lắm, em sẽ ủng hộ shop tiếp', sender: 'customer', hoursAgo: 20 },
+            { text: 'Cảm ơn bạn rất nhiều! Rất vui được phục vụ bạn.', sender: 'user', hoursAgo: 19 },
+          ],
+        },
+        {
+          customerName: 'Ngô Thị K',
+          lastMessage: 'Em muốn hủy đơn hàng',
+          pinned: false,
+          unread: 1,
+          online: false,
+          messages: [
+            { text: 'Em muốn hủy đơn hàng', sender: 'customer', hoursAgo: 4 },
+            { text: 'Để em kiểm tra và hỗ trợ bạn hủy đơn hàng. Mã đơn hàng của bạn là gì ạ?', sender: 'user', hoursAgo: 3 },
+          ],
+        },
       ],
       zalo: [
         {
@@ -163,6 +221,52 @@ const seedMessages = async () => {
             { text: 'Cảm ơn chị! Rất vui được phục vụ chị. Em sẽ gửi catalog sản phẩm mới cho chị ngay.', sender: 'user', hoursAgo: 19 },
           ],
         },
+        {
+          customerName: 'Thảo Nguyên',
+          lastMessage: 'Shop có ship COD không?',
+          pinned: false,
+          unread: 1,
+          online: true,
+          messages: [
+            { text: 'Shop có ship COD không?', sender: 'customer', hoursAgo: 2 },
+            { text: 'Có ạ! Shop hỗ trợ ship COD toàn quốc. Bạn chỉ cần cung cấp địa chỉ là được.', sender: 'user', hoursAgo: 1 },
+          ],
+        },
+        {
+          customerName: 'Minh Tuấn',
+          lastMessage: 'Em muốn đặt số lượng lớn',
+          pinned: false,
+          unread: 0,
+          online: false,
+          messages: [
+            { text: 'Em muốn đặt số lượng lớn', sender: 'customer', hoursAgo: 7 },
+            { text: 'Shop có ưu đãi gì không?', sender: 'customer', hoursAgo: 7 },
+            { text: 'Đặt số lượng lớn shop sẽ giảm thêm 10% và miễn phí ship. Bạn muốn đặt bao nhiêu?', sender: 'user', hoursAgo: 6 },
+          ],
+        },
+        {
+          customerName: 'Hương Lan',
+          lastMessage: 'Sản phẩm có đổi trả không?',
+          pinned: false,
+          unread: 0,
+          online: true,
+          messages: [
+            { text: 'Sản phẩm có đổi trả không?', sender: 'customer', hoursAgo: 9 },
+            { text: 'Shop hỗ trợ đổi trả trong 7 ngày nếu sản phẩm còn nguyên vẹn, chưa sử dụng.', sender: 'user', hoursAgo: 8 },
+          ],
+        },
+        {
+          customerName: 'Quang Huy',
+          lastMessage: 'Em cần tư vấn',
+          pinned: false,
+          unread: 2,
+          online: true,
+          messages: [
+            { text: 'Em cần tư vấn', sender: 'customer', hoursAgo: 1 },
+            { text: 'Sản phẩm nào phù hợp với em không?', sender: 'customer', hoursAgo: 1 },
+            { text: 'Để em tư vấn cho bạn. Bạn có thể cho em biết nhu cầu của bạn không?', sender: 'user', hoursAgo: 0 },
+          ],
+        },
       ],
       telegram: [
         {
@@ -235,18 +339,61 @@ const seedMessages = async () => {
             { text: 'Thank you so much! We are happy to serve you again.', sender: 'user', hoursAgo: 17 },
           ],
         },
+        {
+          customerName: 'Sarah Johnson',
+          lastMessage: 'Do you ship internationally?',
+          pinned: false,
+          unread: 1,
+          online: true,
+          messages: [
+            { text: 'Do you ship internationally?', sender: 'customer', hoursAgo: 4 },
+            { text: 'Yes, we ship worldwide. Shipping fees depend on the destination country.', sender: 'user', hoursAgo: 3 },
+          ],
+        },
+        {
+          customerName: 'David Lee',
+          lastMessage: 'Can I get a discount?',
+          pinned: false,
+          unread: 0,
+          online: false,
+          messages: [
+            { text: 'Can I get a discount?', sender: 'customer', hoursAgo: 12 },
+            { text: 'We have a 15% discount for orders over $100. Would you like to see our products?', sender: 'user', hoursAgo: 11 },
+          ],
+        },
+        {
+          customerName: 'Emma Wilson',
+          lastMessage: 'The product arrived damaged',
+          pinned: false,
+          unread: 2,
+          online: false,
+          messages: [
+            { text: 'The product arrived damaged', sender: 'customer', hoursAgo: 8 },
+            { text: 'I\'m so sorry to hear that. Please send me photos and we will send a replacement immediately.', sender: 'customer', hoursAgo: 7 },
+            { text: 'Thank you for your quick response. I will send the photos now.', sender: 'user', hoursAgo: 6 },
+          ],
+        },
+        {
+          customerName: 'Michael Brown',
+          lastMessage: 'Great service!',
+          pinned: false,
+          unread: 0,
+          online: true,
+          messages: [
+            { text: 'Great service!', sender: 'customer', hoursAgo: 16 },
+            { text: 'Thank you for your kind words! We appreciate your feedback.', sender: 'user', hoursAgo: 15 },
+          ],
+        },
       ],
     }
 
     for (const [platform, sampleData] of Object.entries(platformData)) {
       console.log(`\n📦 Seeding messages for ${platform}...`)
 
-      // Check if conversations already exist
-      const existing = await Conversation.findOne({ user: admin._id, platform })
-      if (existing) {
-        console.log(`⚠️  Đã có dữ liệu cho ${platform}, bỏ qua...`)
-        continue
-      }
+      // Delete existing conversations for this platform to allow re-seeding
+      await Conversation.deleteMany({ user: admin._id, platform })
+      await Message.deleteMany({ user: admin._id })
+      console.log(`🗑️  Đã xóa dữ liệu cũ cho ${platform}`)
 
       for (let i = 0; i < sampleData.length; i++) {
         const item = sampleData[i]
