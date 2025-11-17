@@ -126,11 +126,14 @@ export const createUser = asyncHandler(async (req, res) => {
     throw new Error('User already exists')
   }
 
+  // Ensure role is 'admin' if not provided or empty
+  const userRole = role && role.trim() ? role : 'admin'
+
   const user = await User.create({
     name,
     email,
     password,
-    role: role || 'admin', // Default to admin for new users
+    role: userRole, // Default to admin for new users (model default is also admin)
     permissions: permissions || [],
   })
 
