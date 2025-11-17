@@ -68,7 +68,14 @@ import { logActivity, getClientIp, getUserAgent } from '../utils/activityLogger.
  *         description: Server error
  */
 export const getTones = asyncHandler(async (req, res) => {
-  const tones = await Tone.find({ user: req.user._id }).sort({ createdAt: -1 })
+  // Get preset tones (isPreset: true) - shared for all users
+  // AND user's own tones (user: req.user._id, isPreset: false or not set)
+  const tones = await Tone.find({
+    $or: [
+      { isPreset: true }, // Preset tones - shared for all
+      { user: req.user._id, $or: [{ isPreset: false }, { isPreset: { $exists: false } }] } // User's own tones
+    ]
+  }).sort({ isPreset: -1, createdAt: -1 }) // Preset tones first, then user tones by creation date
   res.json(tones)
 })
 
